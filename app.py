@@ -6,7 +6,7 @@ CORS(app)
 
 @app.route('/')
 def hello_world():
-url = request.args.get('url').url
+    url = request.args.get('url').url
     return url
 
 if __name__ == '__main__':
