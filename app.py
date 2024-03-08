@@ -9,7 +9,7 @@ CORS(app)
 def hello_world():
     url = request.args.get('url')
     url1 = requests.get(url).url
-    return url1
+    return jsonify(url1)
 
 if __name__ == '__main__':
     app.run()
