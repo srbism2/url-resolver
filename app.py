@@ -17,7 +17,9 @@ def flip_info():
     url = request.args.get('url')
     flipkart_response = hit_url(url)
     price = get_flipkart_price(flipkart_response)
+    print("price is ",price)
     image = get_flipkart_image(flipkart_response)
+    print("url is ",url)
     
     # Display the fetched data
     flipkart_json = {"image" : image, "price" : price}
@@ -59,6 +61,7 @@ def hit_url(url):
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
     try:
         response = requests.get(url, headers=headers)
+        print("response is ",response)
         if response.status_code == 200:
             return response
         else:
