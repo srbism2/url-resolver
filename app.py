@@ -13,7 +13,7 @@ def get_url():
     return jsonify(url1)
 
 @app.route('/')
-def get_url():
+def hello_world():
     return "app is live"
 
 @app.route('/flipkart_info/')
