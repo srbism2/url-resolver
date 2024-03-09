@@ -9,8 +9,10 @@ CORS(app)
 @app.route('/geturl/')
 def get_url():
     url = request.args.get('url')
-    url1 = requests.get(url).url
-    return jsonify(url1)
+    url1 = requests.get(url)
+    print("base response is", url1)
+    url2 = url1.url
+    return jsonify(url2)
 
 @app.route('/')
 def hello_world():
