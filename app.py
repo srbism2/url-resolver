@@ -6,11 +6,15 @@ from bs4 import BeautifulSoup
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/')
-def hello_world():
+@app.route('/geturl/')
+def get_url():
     url = request.args.get('url')
     url1 = requests.get(url).url
     return jsonify(url1)
+
+@app.route('/')
+def get_url():
+    return "app is live"
 
 @app.route('/flipkart_info/')
 def flip_info():
