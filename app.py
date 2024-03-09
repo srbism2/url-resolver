@@ -15,7 +15,7 @@ def hello_world():
 @app.route('/flipkart_info/')
 def flip_info():
     url = request.args.get('url')
-    flipkart_response = hit_url(flipkart_url)
+    flipkart_response = hit_url(url)
     price = get_flipkart_price(flipkart_response)
     image = get_flipkart_image(flipkart_response)
     
